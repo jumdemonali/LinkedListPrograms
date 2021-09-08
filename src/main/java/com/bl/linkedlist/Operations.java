@@ -22,4 +22,13 @@ public class Operations {
         linkedList.insert(30);
         linkedList.print();
     }
+    public static void popOperation()
+    {
+        LinkedList linkedlist =new LinkedList();
+        linkedlist.push(70);
+        linkedlist.push(30);
+        linkedlist.push(56);
+        linkedlist.popFirst();
+        linkedlist.print();
+    }
 }
