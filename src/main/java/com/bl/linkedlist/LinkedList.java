@@ -27,6 +27,18 @@ public class LinkedList {
             temp.next=tail;
         }
     }
+    public void insert(int data) {
+        Node newnode = new Node(data);
+        if (head == null) {
+            this.head = newnode;
+        } else if (tail == null) {
+            this.tail = newnode;
+        } else {
+            Node temp = newnode;
+            temp.next = this.tail;
+            this.head.next = temp;
+        }
+    }
 
     public void print() {
         if (head == null) {
