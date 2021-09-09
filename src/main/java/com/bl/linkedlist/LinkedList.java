@@ -3,6 +3,7 @@ package com.bl.linkedlist;
 public class LinkedList {
     Node head;
     Node tail;
+
     public void push(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -14,19 +15,19 @@ public class LinkedList {
             newNode.next = temp;
         }
     }
+
     public void append(int data) {
-        Node newnode=new Node(data);
-        if (head == null)
-        {
+        Node newnode = new Node(data);
+        if (head == null) {
             this.head = newnode;
             this.tail = newnode;
-        } else
-        {
-            Node temp=tail;
-            this.tail=newnode;
-            temp.next=tail;
+        } else {
+            Node temp = tail;
+            this.tail = newnode;
+            temp.next = tail;
         }
     }
+
     public void insert(int data) {
         Node newnode = new Node(data);
         if (head == null) {
@@ -39,27 +40,49 @@ public class LinkedList {
             this.head.next = temp;
         }
     }
+
     public void popFirst() {
         if (head == null) {
             System.out.println("\nList is empty!!!");
-        }
-        else{
-            Node temp=this.head.next;
-            head=temp;
+        } else {
+            Node temp = this.head.next;
+            head = temp;
         }
     }
-    public void popLast()
-    {
-        Node tempNode=head;
-        while(!tempNode.next.equals(tail))
-        {
-            tempNode=tempNode.next;
+
+    public void popLast() {
+        Node tempNode = head;
+        while (!tempNode.next.equals(tail)) {
+            tempNode = tempNode.next;
         }
-        this.tail=tempNode;
-        tempNode.next=null;
+        this.tail = tempNode;
+        tempNode.next = null;
 
     }
 
+    public void searchNode(int value) {
+        Node tempNode = head;
+        int index = 1;
+        boolean flag = false;
+        if (head == null)
+            System.out.println("List is empty");
+        else {
+            while (tempNode != null) {
+                if (tempNode.data == value) {
+                    flag = true;
+                    break;
+                }
+                index++;
+                tempNode = tempNode.next;
+            }
+        }
+        if (flag == true) {
+            System.out.println(value + " is present at " + index);
+        } else {
+            System.out.println("Element is not present");
+        }
+
+    }
 
     public void print() {
         if (head == null) {

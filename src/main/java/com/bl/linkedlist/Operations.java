@@ -1,12 +1,13 @@
 package com.bl.linkedlist;
 
 public class Operations {
-    public static void addElementAtStart(){
+    public static LinkedList addElementAtStart(){
         LinkedList linkedList= new LinkedList();
         linkedList.push(70);
         linkedList.push(30);
         linkedList.push(56);
         linkedList.print();
+        return linkedList;
     }
     public static void appendElement() {
         LinkedList linkedList = new LinkedList();
@@ -23,15 +24,21 @@ public class Operations {
         linkedList.print();
     }
     public static void deleteFirstNode() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList linkedList = addElementAtStart();
         linkedList.popFirst();
         linkedList.print();
     }
 
     public static void deleteLastNode() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList linkedList = addElementAtStart();
         linkedList.popLast();
         linkedList.print();
 
     }
+
+    public static void findNodeBaseOnValue() {
+        LinkedList linkedList = addElementAtStart();
+        linkedList.searchNode(30);
     }
+
+}
