@@ -4,7 +4,7 @@ public class LinkedListMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 1 to add element \nEnter 2 to append element at start \nEnter 3 to insert element in between \nEnter 4 to delete first element \nEnter 5 to delete last element");
-        System.out.println("Enter 6 to search element");
+        System.out.println("Enter 6 to search element \nEnter 7 to add data after searching specific data");
         switch(sc.nextInt()){
             case 1:
                 Operations.addElementAtStart();
@@ -24,7 +24,9 @@ public class LinkedListMain {
             case 6:
                 Operations.findNodeBaseOnValue();
                 break;
-
+            case 7:
+                Operations.insertAfterSearchNode();
+                break;
         }
     }
 }
