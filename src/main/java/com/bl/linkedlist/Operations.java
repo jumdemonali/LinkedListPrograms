@@ -1,14 +1,15 @@
 package com.bl.linkedlist;
 
 public class Operations {
-    public static LinkedList addElementAtStart(){
-        LinkedList linkedList= new LinkedList();
+    public static LinkedList addElementAtStart() {
+        LinkedList linkedList = new LinkedList();
         linkedList.push(70);
         linkedList.push(30);
         linkedList.push(56);
         linkedList.print();
         return linkedList;
     }
+
     public static void appendElement() {
         LinkedList linkedList = new LinkedList();
         linkedList.append(56);
@@ -16,6 +17,7 @@ public class Operations {
         linkedList.append(70);
         linkedList.print();
     }
+
     public static void insertInBetween() {
         LinkedList linkedList = new LinkedList();
         linkedList.insert(56);
@@ -23,6 +25,7 @@ public class Operations {
         linkedList.insert(30);
         linkedList.print();
     }
+
     public static void deleteFirstNode() {
         LinkedList linkedList = addElementAtStart();
         linkedList.popFirst();
@@ -43,7 +46,7 @@ public class Operations {
 
     public static LinkedList insertAfterSearchNode() {
         System.out.println("Before Insertion");
-        LinkedList linkedList= addElementAtStart();
+        LinkedList linkedList = addElementAtStart();
         Node newNode = new Node(40);
         Node previousNode = linkedList.insertAfter(30, newNode);
         System.out.println("After Insertion");
@@ -61,7 +64,15 @@ public class Operations {
         int size = linkedList.size();
         System.out.println("Linked size is " + size);
 
-        }
+    }
 
+    public static void sortNode() {
+        System.out.println("Before sorting");
+        LinkedList linkedList = addElementAtStart();
+        linkedList.sort();
+        System.out.println("After sorting");
+        linkedList.print();
+    }
 }
+
 

@@ -85,7 +85,6 @@ public class LinkedList {
     }
 
 
-
     public Node insertAfter(int value, Node newNode) {
         Node tempNode = head;
         if (head == null) {
@@ -104,6 +103,7 @@ public class LinkedList {
         }
         return tempNode;
     }
+
     public void deleteNode(int value) {
         if (this.head == null) {
             System.out.println("Linked List is empty ");
@@ -117,6 +117,7 @@ public class LinkedList {
         Node nextNode = prevNode.next.next;
         prevNode.next = nextNode;
     }
+
     public int size() {
         if (this.head == null) {
             System.out.println("Linked List is empty ");
@@ -131,6 +132,25 @@ public class LinkedList {
         return size;
     }
 
+    public void sort() {
+        Node i = head, j = null;
+        if (head == null) {
+            System.out.println("Linked list is empty");
+            return;
+        }
+        while (i != null) {
+            j = i.next;
+            while (j != null) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+                j = j.next;
+            }
+            i = i.next;
+        }
+    }
 
     public void print() {
         if (head == null) {
