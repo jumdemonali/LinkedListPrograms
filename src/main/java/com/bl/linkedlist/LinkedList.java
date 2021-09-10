@@ -83,6 +83,9 @@ public class LinkedList {
         }
 
     }
+
+
+
     public Node insertAfter(int value, Node newNode) {
         Node tempNode = head;
         if (head == null) {
@@ -94,12 +97,40 @@ public class LinkedList {
                 }
                 tempNode = tempNode.next;
 
-            } Node tempNodeNext = tempNode.next;
+            }
+            Node tempNodeNext = tempNode.next;
             tempNode.next = newNode;
             newNode.next = tempNodeNext;
         }
         return tempNode;
     }
+    public void deleteNode(int value) {
+        if (this.head == null) {
+            System.out.println("Linked List is empty ");
+            return;
+        }
+        Node tempNode = head;
+        while (tempNode.next.data != value) {
+            tempNode = tempNode.next;
+        }
+        Node prevNode = tempNode;
+        Node nextNode = prevNode.next.next;
+        prevNode.next = nextNode;
+    }
+    public int size() {
+        if (this.head == null) {
+            System.out.println("Linked List is empty ");
+            return 0;
+        }
+        Node tempNode = head;
+        int size = 1;
+        while (tempNode.next != null) {
+            size++;
+            tempNode = tempNode.next;
+        }
+        return size;
+    }
+
 
     public void print() {
         if (head == null) {
@@ -107,7 +138,7 @@ public class LinkedList {
         } else {
             Node temp = head;
             while (temp != null) {
-                System.out.print(temp.data+ " ");
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
             System.out.println();

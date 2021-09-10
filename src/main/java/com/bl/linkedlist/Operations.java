@@ -41,12 +41,27 @@ public class Operations {
         linkedList.searchNode(30);
     }
 
-    public static void insertAfterSearchNode() {
+    public static LinkedList insertAfterSearchNode() {
         System.out.println("Before Insertion");
         LinkedList linkedList= addElementAtStart();
         Node newNode = new Node(40);
         Node previousNode = linkedList.insertAfter(30, newNode);
         System.out.println("After Insertion");
         linkedList.print();
+        return linkedList;
     }
+
+    public static void deleteSpecificNode() {
+        System.out.println("Before deletion:");
+        LinkedList linkedList = insertAfterSearchNode();
+        System.out.println("After");
+        linkedList.deleteNode(40);
+        System.out.println("After deletion:");
+        linkedList.print();
+        int size = linkedList.size();
+        System.out.println("Linked size is " + size);
+
+        }
+
 }
+
