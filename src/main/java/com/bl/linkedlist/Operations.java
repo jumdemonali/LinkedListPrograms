@@ -42,11 +42,11 @@ public class Operations {
     }
 
     public static void insertAfterSearchNode() {
+        System.out.println("Before Insertion");
         LinkedList linkedList= addElementAtStart();
-        System.out.println("Before");
         Node newNode = new Node(40);
         Node previousNode = linkedList.insertAfter(30, newNode);
-        System.out.println("After insertion");
+        System.out.println("After Insertion");
         linkedList.print();
     }
 }
