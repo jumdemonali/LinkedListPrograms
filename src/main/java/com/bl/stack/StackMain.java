@@ -22,8 +22,7 @@ public class StackMain {
                 stack.pop();
                 break;
             case 4:
-                stack.queueop();
-                break;
+                stack.enqueue();
         }
     }
 }
