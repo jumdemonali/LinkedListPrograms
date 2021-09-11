@@ -17,7 +17,7 @@ public class LinkedList {
         return newNode;
     }
 
-    public void append(int data) {
+    public Node append(int data) {
         Node newnode = new Node(data);
         if (head == null) {
             this.head = newnode;
@@ -27,6 +27,7 @@ public class LinkedList {
             this.tail = newnode;
             temp.next = tail;
         }
+        return newnode;
     }
 
     public void insert(int data) {
@@ -52,6 +53,7 @@ public class LinkedList {
     }
 
     public void popLast() {
+
         Node tempNode = head;
         while (!tempNode.next.equals(tail)) {
             tempNode = tempNode.next;

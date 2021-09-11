@@ -9,6 +9,7 @@ public class StackMain {
         System.out.println("Enter 2 to get top element of stack");
         System.out.println("Enter 3 to delete all element of stack");
         System.out.println("Enter 4 to add elements in queue");
+
         Stack stack = new Stack();
 
         switch (sc.nextInt()) {
@@ -22,8 +23,7 @@ public class StackMain {
                 stack.pop();
                 break;
             case 4:
-                stack.queueop();
-                break;
+                stack.enqueue();
         }
     }
 }

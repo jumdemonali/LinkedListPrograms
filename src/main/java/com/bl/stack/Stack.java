@@ -5,6 +5,7 @@ import com.bl.linkedlist.Node;
 
 public class Stack {
     private Node top;
+    private Node front;
     private LinkedList linkedList;
 
     public Stack() {
@@ -36,12 +37,12 @@ public class Stack {
         linkedList.print();
     }
 
-    public int queueop() {
-        top = linkedList.push(56);
+    public int enqueue() {
+        front = linkedList.append(56);
         linkedList.append(30);
         linkedList.append(70);
         linkedList.print();
-        System.out.println("Top element is " + this.top.data);
-        return this.top.data;
+        System.out.println("Front element is " + this.front.data);
+        return this.front.data;
     }
 }
