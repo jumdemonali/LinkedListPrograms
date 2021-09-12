@@ -37,12 +37,24 @@ public class Stack {
         linkedList.print();
     }
 
-    public int enqueue() {
+    public void enqueue() {
         front = linkedList.append(56);
         linkedList.append(30);
         linkedList.append(70);
         linkedList.print();
-        System.out.println("Front element is " + this.front.data);
-        return this.front.data;
+
+    }
+
+    public void dequeue() {
+        System.out.println("Before");
+        enqueue();
+        Node temp = front;
+        while (temp != null)
+        {
+            linkedList.popFirst();
+            temp=temp.next;
+        }
+        System.out.println("After");
+        linkedList.print();
     }
 }
